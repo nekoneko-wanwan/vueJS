@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>簡単なサンプル</title>
+<script src="../lib/vue.min.js"></script>
+<script src="main.js"></script>
+</head>
+<body>
+
+<div id="demo">
+  <style>
+    .is-active {
+      text-decoration: line-through;
+    }
+  </style>
+  <h1>{{title | uppercase}}</h1>
+  <p>クリックしたら .is-active を付け替える</p>
+  <ul>
+  <!--
+  ・data.todos[]をループする
+  ・クリックでdoneを切り替える
+  ・doneのtrue/falseでclassを切り替える
+  -->
+    <li v-repeat="todos" v-on="click: done = !done" class="{{done ? 'is-active' : ''}}">
+      {{content}}
+    </li>
+  </ul>
+
+  <!-- v-textディレクティブ -->
+  <div v-text="message"></div>
+
+  <!-- v-textディレクティブで文を使う -->
+  <div v-text="'Hello ' + user.firstName + ' ' + user.lastName"></div>
+
+  <!-- mustache方式 -->
+  <div>v-textを使わない→{{message | capitalize }} {{user.lastName}}さん</div>
+
+  <!-- v-attrディレクティブ -->
+  <div><canvas v-attr="width: w, height: h" style="background-color: #999;"></canvas></div>
+
+  <!-- クリックイベント -->
+  <div v-on="click: clickHandler">クリック</div>
+
+  <!-- 1つのDirectiveに対してオブジェクト形式で複数のバインディングを定義 -->
+  <div><input v-on="keydown:onKeydown | key enter, keyup:onKeyup" value="まとめてイベントを設定"></div>
+
+  <!-- この中に記述したものはコンパイルされない -->
+  <div v-pre>
+    <!-- markup in here will not be compiled -->
+    <div v-text="message"></div>
+    {{message}}
+  </div>
+
+
+</div><!-- /#demo -->
+
+
+
+
+
+
+</body>
+</html>

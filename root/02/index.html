@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>簡単なajax</title>
+<script src="//code.jquery.com/jquery-git2.min.js"></script>
+<script src="../lib/vue.min.js"></script>
+<script src="main.js"></script>
+<style>
+  td {
+    border: 1px solid #000;
+    border-left: none;
+    border-right: none;
+    padding: 10px;
+  }
+  table {
+    width: 100%;
+  }
+</style>
+</head>
+<body>
+
+<div id="demo">
+
+
+  <h1>ajaxを利用してデータを表示してみる</h1>
+  <table>
+    <tr v-repeat="item_list">
+      <td v-text="itemName" width="20%">読み込み中...</td>
+      <td v-text="itemId">読み込み中...</td>
+      <td v-text="itemAbout">読み込み中...</td>
+    </tr>
+  </table>
+
+
+</div><!-- /#demo -->
+
+
+
+
+</body>
+</html>
