@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>体で覚えるVue.js | ViewModel生成編</title>
+<script src="//code.jquery.com/jquery-git2.min.js"></script>
+<script src="../lib/vue.min.js"></script>
+<script src="main.js"></script>
+</head>
+<body>
+
+
+<!-- ################### -->
+<h1>データバインディングして画面に表示してみる</h1>
+<div id="sample01">
+	<div v-text="bind1"></div>
+	<div v-model="bind2"></div>
+	<div>{{bind3}}</div>
+</div>
+<!-- ################### -->
+
+
+<!-- ################### -->
+<h1>methodsを使ったデータ・アクセス</h1>
+<div id="sample02">
+	<div v-text="fullName()"></div>
+</div>
+<!-- ################### -->
+
+
+<!-- ################### -->
+<h1>computedを使ったデータ・アクセス</h1>
+<p>括弧無しであたかもプロパティであるかのようにアクセスできる</p>
+<div id="sample03">
+	<div v-text="fullName"></div>
+</div>
+<!-- ################### -->
+
+
+<!-- ################### -->
+<h1>属性の取得</h1>
+<div id="sample04" style="font-size: 30px;margin-bottom: 20px;">
+	<div v-text="text">style</div>
+</div>
+<!-- ################### -->
+
+
+<!-- ################### -->
+<h1>テンプレートを使う</h1>
+<div id="sample05">hogehoge</div>
+<!-- ################### -->
+
+
+<!-- ################### -->
+<h1>イベントフックな関数定義</h1>
+<p>ビューモデルに特定の状態が発生した時に実行されるコールバック関数の定義オプション</p>
+<div id="sample06">
+	<p v-text="value"></p>
+	<p v-text="log"></p>
+</div>
+<!-- ################### -->
+
+
+<!-- ################### -->
+<h1>カスタムディレクティブ v-consolelogの実装</h1>
+<div id="sample07" v-consolelog="foo"></div>
+<!-- ################### -->
+
+
+<!-- ################### -->
+<h1>カスタムフィルタ filtersオプション</h1>
+<div id="sample08">
+	<span v-text="foo | mysort"></span>
+</div>
+<!-- ################### -->
+
+
+<!-- ################### -->
+<h1>カスタムパーツ partialsオプション</h1>
+<p>既存のDOM要素を部品化して再利用</p>
+<div id="sample09">
+	<span v-partial="foo"></span>
+	<span>{{> foo}}</span>
+</div>
+<div id="other"><p>OTHER</p></div>
+<!-- ################### -->
+
+
+<!-- ################### -->
+<h1>lazyオプション</h1>
+<p>input編集時などに、同期的に値が書き換えられずフォーカスを外れてからデータが更新される</p>
+<form id="sample" action="">
+  <div v-text="foo"></div>
+  <input type="text" v-model="foo" lazy>
+</form>
+
+<!-- ################### -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
